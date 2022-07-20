@@ -53,6 +53,10 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
 
+   -- Treesitter
+   -- parser generator language syntax
+   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = function() require("plugins._treesitter").setup() end }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
