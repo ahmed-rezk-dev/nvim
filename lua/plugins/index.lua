@@ -43,6 +43,16 @@ return packer.startup(function(use)
   -- My plugins here
   use "wbthomason/packer.nvim"
 
+  -- Helpers
+  use "nvim-lua/plenary.nvim" -- require for LSP
+
+
+  -- LSP
+  use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer"
+  use "tamago324/nlsp-settings.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
