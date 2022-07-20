@@ -72,6 +72,10 @@ return packer.startup(function(use)
   use { "L3MON4D3/LuaSnip" }
   use "rafamadriz/friendly-snippets"
 
+  -- Lua interface plugins
+  use {"kyazdani42/nvim-tree.lua", config = function() require("plugins._nvim-tree").setup() end} -- Files exploer
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
