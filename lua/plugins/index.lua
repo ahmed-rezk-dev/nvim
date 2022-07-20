@@ -74,7 +74,7 @@ return packer.startup(function(use)
 
   -- Lua interface plugins
   use {"kyazdani42/nvim-tree.lua", config = function() require("plugins._nvim-tree").setup() end} -- Files exploer
-
+  use {"folke/which-key.nvim", config = function () require("plugins._whichkey").setup() end } -- shortcuts manager
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
