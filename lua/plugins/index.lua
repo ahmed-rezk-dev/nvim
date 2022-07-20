@@ -55,8 +55,7 @@ return packer.startup(function(use)
 
     -- Treesitter
     -- parser generator language syntax
-    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate",
-        config = function() require("plugins._treesitter").setup() end }
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = function() require("plugins._treesitter").setup() end }
 
     -- cmp plugins
     use { "hrsh7th/nvim-cmp", config = function() require("plugins._cmp").setup() end }
@@ -78,6 +77,7 @@ return packer.startup(function(use)
     use { "folke/which-key.nvim", config = function() require("plugins._whichkey").setup() end } -- shortcuts manager
     use { "akinsho/bufferline.nvim", config = function() require("plugins._bufferline").setup() end } -- Tabs/Buffers mananger
     use { "nvim-lualine/lualine.nvim", config = function() require("plugins._lualine").setup() end } -- Stauts button bar
+    use { "nvim-telescope/telescope.nvim", config = function () require("plugins._telescope").setup() end } -- finder/ Searchings
 
     -- Themes/Colorsches
     use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
