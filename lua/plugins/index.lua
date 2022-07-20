@@ -77,6 +77,7 @@ return packer.startup(function(use)
     use { "kyazdani42/nvim-tree.lua", config = function() require("plugins._nvim-tree").setup() end } -- Files exploer
     use { "folke/which-key.nvim", config = function() require("plugins._whichkey").setup() end } -- shortcuts manager
     use { "akinsho/bufferline.nvim", config = function() require("plugins._bufferline").setup() end } -- Tabs/Buffers mananger
+    use { "nvim-lualine/lualine.nvim", config = function() require("plugins._lualine").setup() end } -- Stauts button bar
 
     -- Themes/Colorsches
     use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
