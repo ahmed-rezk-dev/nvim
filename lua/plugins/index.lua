@@ -78,6 +78,7 @@ return packer.startup(function(use)
     use { "folke/which-key.nvim", config = function() require("plugins._whichkey").setup() end } -- shortcuts manager
     use { "akinsho/bufferline.nvim", config = function() require("plugins._bufferline").setup() end } -- Tabs/Buffers mananger
 
+    -- Themes/Colorsches
     use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
 
     -- Automatically set up your configuration after cloning packer.nvim
