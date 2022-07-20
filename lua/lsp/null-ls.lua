@@ -14,7 +14,7 @@ null_ls.setup {
   sources = {
     formatting.prettier,
     formatting.black.with { extra_args = { "--fast" } },
-    formatting.stylua,
+    -- formatting.stylua,
     diagnostics.eslint,
   },
   on_attach = function(client, bufnr)
