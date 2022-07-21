@@ -46,6 +46,7 @@ return packer.startup(function(use)
     -- Helpers
     use "nvim-lua/plenary.nvim" -- require for LSP
     use { "ahmedkhalf/project.nvim", config = function() require("plugins._project").setup() end } -- Automagically cd to project directory using nvim lsp
+    use 'lewis6991/impatient.nvim' -- Speed up loading Lua modules in Neovim to improve startup time.
     use { "rmagatti/auto-session", config = function() require("plugins._sessions").setup() end } -- sessions manager
     use { "rmagatti/session-lens",  requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" }, config = function() require("session-lens").setup() end } -- telescope sessions manager 
     use { "akinsho/toggleterm.nvim", config = function () require("plugins._toggleterm").setup() end } -- To persist and toggle multiple terminals 
