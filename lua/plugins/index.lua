@@ -94,6 +94,7 @@ return packer.startup(function(use)
     use { "goolord/alpha-nvim", config =function () require("plugins._alpha").setup() end } -- Dashboard window
     use { "anuvyklack/hydra.nvim", config = function() require("plugins._hydra").setup() end } -- This is the Neovim implementation of the famous Emacs Hydra package.
     use "kyazdani42/nvim-web-devicons" -- This plugin provides the same icons as well as colors for each icon
+    use { "tami5/lspsaga.nvim", config = function() require("plugins._lspsaga").setup() end } -- A light-weight lsp plugin based on neovim's built-in lsp with a highly performant UI.
     -- Themes/Colorsches
     use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
 
