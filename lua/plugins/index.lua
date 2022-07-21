@@ -67,6 +67,7 @@ return packer.startup(function(use)
     use { "numToStr/Comment.nvim", config = function() require("plugins._comment").setup() end }
     use "JoosepAlviste/nvim-ts-context-commentstring"
     use { "windwp/nvim-autopairs", config = function() require("plugins._autopairs").setup() end } -- To supports multiple characters auto close & open tags
+    use { "norcalli/nvim-colorizer.lua", config = function() require("plugins._colorizer").setup() end } -- A high-performance color highlighter
 
     -- cmp plugins
     use { "hrsh7th/nvim-cmp", config = function() require("plugins._cmp").setup() end }
