@@ -60,6 +60,7 @@ return packer.startup(function(use)
     -- Treesitter
     -- parser generator language syntax
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = function() require("plugins._treesitter").setup() end }
+    use { "p00f/nvim-ts-rainbow" }
 
     -- cmp plugins
     use { "hrsh7th/nvim-cmp", config = function() require("plugins._cmp").setup() end }
