@@ -130,6 +130,10 @@ M.setup = function()
             R = { "<cmd>:lua remove_workspace_folder()<cr>", "Remove workspace folder" },
             W = { "<cmd>:lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List workspace folders" },
             e = { "<cmd>lua vim.diagnostic.setqflist()<cr>", "Workspace Diagnostics" },
+            i = { "<cmd>LspInfo<cr>", "Info" },
+            j = { "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = O.lsp.popup_border}})<cr>", "Next Diagnostic" },
+            k = { "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<cr>", "Prev Diagnostic" },
+            q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
         },
 }
 
