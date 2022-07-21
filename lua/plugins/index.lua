@@ -83,7 +83,7 @@ return packer.startup(function(use)
     use { "nvim-lualine/lualine.nvim", config = function() require("plugins._lualine").setup() end } -- Stauts button bar
     use { "nvim-telescope/telescope.nvim", config = function () require("plugins._telescope").setup() end } -- finder/ Searchings
     use { "goolord/alpha-nvim", config =function () require("plugins._alpha").setup() end } -- Dashboard window
-
+    use { "anuvyklack/hydra.nvim", config = function() require("plugins._hydra").setup() end } -- This is the Neovim implementation of the famous Emacs Hydra package.
     -- Themes/Colorsches
     use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
 
