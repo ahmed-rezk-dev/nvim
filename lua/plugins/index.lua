@@ -45,6 +45,7 @@ return packer.startup(function(use)
 
     -- Helpers
     use "nvim-lua/plenary.nvim" -- require for LSP
+    use { "ahmedkhalf/project.nvim", config = function() require("plugins._project").setup() end } -- Automagically cd to project directory using nvim lsp
     use { "rmagatti/auto-session", config = function() require("plugins._sessions").setup() end } -- sessions manager
     use { "rmagatti/session-lens",  requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" }, config = function() require("session-lens").setup() end } -- telescope sessions manager 
 
@@ -84,7 +85,6 @@ return packer.startup(function(use)
 
     -- Themes/Colorsches
     use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
-
 
     -- Git
     use { "lewis6991/gitsigns.nvim", config = function() require("plugins._git").gitsignsSetup() end }
