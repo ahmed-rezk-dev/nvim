@@ -86,6 +86,7 @@ M.setup = function()
             s = { "<cmd>PackerSync<cr>", "Sync" },
             u = { "<cmd>PackerUpdate<cr>", "Update" },
         },
+
         -- Seacrh
         s = {
             name = "Search",
@@ -105,13 +106,32 @@ M.setup = function()
             T = { "<cmd>TodoTelescope <cr>", "TODO" },
         },
 
+        -- Sessions
         S = {
             name = "Sessions",
             s = { ":SaveSession<cr>", "Save Session" },
             S = { ":Telescope session-lens search_session<cr>", "All Sessions" },
             l = { ":RestoreSession<cr>", "Load Session" },
         },
-    }
+
+        -- LSP
+         l = {
+            name = "LSP",
+            H = { "<cmd>:lua signature_help()<cr>", "Signature help" },
+            s = { "<cmd>:Telescope lsp_document_symbols<cr>", "Document symbols" },
+            S = { "<cmd>:Telescope lsp_workspace_symbols<cr>", "Workspace symbols" },
+            D = { "<cmd>:lua declaration({ border = 'rounded', max_width = 80 })<cr>", "Declaration" },
+            A = { "<cmd>:lua range_code_action()<cr>", "Range code action" },
+            c = { "<cmd>:lua incoming_calls()<cr>", "Incoming calls" },
+            C = { "<cmd>:lua outgoing_calls(<cr>", "Outgoing calls" },
+            t = { "<cmd>:lua type_definition()<cr>", "Type definition" },
+            b = { "<cmd>:Telescope  diagnostics<cr>", "All diagnostics" },
+            w = { "<cmd>:lua add_workspace_folder()<cr>", "Add workspace folder" },
+            R = { "<cmd>:lua remove_workspace_folder()<cr>", "Remove workspace folder" },
+            W = { "<cmd>:lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List workspace folders" },
+            e = { "<cmd>lua vim.diagnostic.setqflist()<cr>", "Workspace Diagnostics" },
+        },
+}
 
 
     -- all of the mappings below are equivalent
