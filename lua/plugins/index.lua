@@ -45,6 +45,8 @@ return packer.startup(function(use)
 
     -- Helpers
     use "nvim-lua/plenary.nvim" -- require for LSP
+    use { "rmagatti/auto-session", config = function() require("plugins._sessions").setup() end } -- sessions manager
+    use { "rmagatti/session-lens",  requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" }, config = function() require("session-lens").setup() end } -- telescope sessions manager 
 
 
     -- LSP
