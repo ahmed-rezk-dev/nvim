@@ -63,6 +63,8 @@ return packer.startup(function(use)
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = function() require("plugins._treesitter").setup() end }
     use { "p00f/nvim-ts-rainbow" }
     use { "lukas-reineke/indent-blankline.nvim", config = function() require("plugins._indentline").setup() end }
+    use { "numToStr/Comment.nvim", config = function() require("plugins._comment").setup() end }
+    use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- cmp plugins
     use { "hrsh7th/nvim-cmp", config = function() require("plugins._cmp").setup() end }
