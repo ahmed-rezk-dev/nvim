@@ -85,6 +85,12 @@ return packer.startup(function(use)
     -- Themes/Colorsches
     use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
 
+
+    -- Git
+    use { "lewis6991/gitsigns.nvim", config = function() require("plugins._git").gitsignsSetup() end }
+    use { "sindrets/diffview.nvim", config = function() require("plugins._git").diffviewSetup() end }
+    use { "TimUntersberger/neogit", requires = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" }, config = function() require("plugins._git").neogitSetup() end }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
