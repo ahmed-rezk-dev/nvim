@@ -51,6 +51,7 @@ return packer.startup(function(use)
     use { "rmagatti/auto-session", config = function() require("plugins._sessions").setup() end } -- sessions manager
     use { "rmagatti/session-lens",  requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" }, config = function() require("session-lens").setup() end } -- telescope sessions manager 
     use { "akinsho/toggleterm.nvim", config = function () require("plugins._toggleterm").setup() end } -- To persist and toggle multiple terminals 
+     use { "christianchiarulli/nvim-gps", branch = "text_hl", config = function() require("plugins._gps").setup() end } -- nvim-gps is status line component that shows context of the current cursor position in file
 
 
     -- LSP
