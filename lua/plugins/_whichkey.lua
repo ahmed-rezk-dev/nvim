@@ -74,7 +74,7 @@ M.setup = function()
         ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
         ["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
         ["m"] = { "<cmd>MarkdownPreviewToggle<CR>", "Markdown Preview" },
-
+        ["f"] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files" },
         L = { "<cmd>:put =printf('console.log('' 🔔 %s 👉 %s 👉 %s:'', %s);', line('.'), expand('%:t'), expand('<cword>'), expand('<cword>'))<cr>", "Javascript Log" },
 
         -- Packer
