@@ -80,6 +80,15 @@ local mappings = {
     "Javascript Log",
   },
 
+  -- Packer
+  p = {
+    name = "Packer",
+    c = { "<cmd>PackerCompile<cr>", "Compile" },
+    i = { "<cmd>PackerInstall<cr>", "Install" },
+    r = { "<cmd>lua require('lv-utils').reload_lv_config()<cr>", "Reload" },
+    s = { "<cmd>PackerSync<cr>", "Sync" },
+    u = { "<cmd>PackerUpdate<cr>", "Update" },
+  },
 }
 
 -- all of the mappings below are equivalent
