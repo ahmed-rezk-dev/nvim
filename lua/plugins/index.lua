@@ -91,6 +91,7 @@ return packer.startup(function(use)
     use { "nvim-telescope/telescope.nvim", config = function () require("plugins._telescope").setup() end } -- finder/ Searchings
     use { "goolord/alpha-nvim", config =function () require("plugins._alpha").setup() end } -- Dashboard window
     use { "anuvyklack/hydra.nvim", config = function() require("plugins._hydra").setup() end } -- This is the Neovim implementation of the famous Emacs Hydra package.
+    use "kyazdani42/nvim-web-devicons" -- This plugin provides the same icons as well as colors for each icon
     -- Themes/Colorsches
     use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
 
