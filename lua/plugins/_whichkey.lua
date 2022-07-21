@@ -135,6 +135,13 @@ M.setup = function()
             k = { "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<cr>", "Prev Diagnostic" },
             q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
         },
+
+        T = {
+            name = "Treesitter",
+            i = { ":TSConfigInfo<cr>", "Info" },
+            p = { ":TSPlaygroundToggle<cr>", "Playground" },
+            h = { ":TSHighlightCapturesUnderCursor<cr>", "Syntax highlight" },
+        },
 }
 
 
