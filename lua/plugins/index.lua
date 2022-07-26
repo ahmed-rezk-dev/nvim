@@ -85,6 +85,13 @@ return packer.startup(function(use)
     use { "L3MON4D3/LuaSnip" }
     use "rafamadriz/friendly-snippets"
 
+    -- Debug Adapter Protocol
+    use {"mfussenegger/nvim-dap", config = function () require("lsp.dap.init").setup() end }
+    use "rcarriga/nvim-dap-ui"
+    use { "nvim-telescope/telescope-dap.nvim" }
+    use { "Pocco81/DAPInstall.nvim", commit = "24923c3819a450a772bb8f675926d530e829665f" }
+    use "theHamsta/nvim-dap-virtual-text"
+
     -- Lua interface plugins
     use { "kyazdani42/nvim-tree.lua", config = function() require("plugins._nvim-tree").setup() end } -- Files exploer
     use { "folke/which-key.nvim", config = function() require("plugins._whichkey").setup() end } -- shortcuts manager
