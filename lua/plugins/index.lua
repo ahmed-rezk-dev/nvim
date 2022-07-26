@@ -112,6 +112,9 @@ return packer.startup(function(use)
     use { "sindrets/diffview.nvim", config = function() require("plugins._git").diffviewSetup() end }
     use { "TimUntersberger/neogit", requires = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" }, config = function() require("plugins._git").neogitSetup() end }
 
+    -- Note taking
+    use { "nvim-neorg/neorg", ft = "norg", after = "nvim-treesitter", config = function() require("plugins._norg").setup() end }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
