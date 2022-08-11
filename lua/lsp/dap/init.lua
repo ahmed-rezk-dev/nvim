@@ -33,12 +33,12 @@ M.setup = function()
             {
                 elements = {
                     -- Elements can be strings or table with id and size keys.
-                    { id = "scopes", size = 0.25 },
+                    { id = "scopes", size = 0.45 },
                     "breakpoints",
                     "stacks",
                     "watches",
                 },
-                size = 40, -- 40 columns
+                size = 80, -- 40 columns
                 position = "right",
             },
             {
