@@ -19,7 +19,7 @@ function M.setup()
         cursorline = "#61afef",
       }, ]]
     }, -- Override default colors by specifying colors for 'onelight' or 'onedark' themes
-    hlgroups = {
+    heightlights = {
       PmenuSel = { bg = "#282C34", fg = "NONE" },
       Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
 
@@ -96,7 +96,7 @@ function M.setup()
         fg = "#61afef",
       }, ]]
     },
-    filetype_hlgroups = {}, -- Override default highlight groups for specific filetypes
+    ft_heightlights = {}, -- Override default highlight groups for specific filetypes
     plugins = { -- Override which plugins highlight groups are loaded
       all = true,
       native_lsp = true,
@@ -118,7 +118,7 @@ function M.setup()
       cursorline = true, -- Use cursorline highlighting?
       transparency = false, -- Use a transparent background?
       terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
-      window_unfocussed_color = true, -- When the window is out of focus, change the normal background?
+      window_unfocused_color = true, -- When the window is out of focus, change the normal background?
     },
   }
   onedarkpro.load()
