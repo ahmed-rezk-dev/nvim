@@ -183,6 +183,13 @@ M.setup = function()
             q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
             J = { "<cmd>:'<,'>SnipRun<cr>", "Javascript Run" },
       },
+
+
+      -- notes comments
+      t = {
+            name = "Notes",
+            a = { "<cmd>:TodoTrouble<cr>", "Notes" },
+      },
 }
 
 
