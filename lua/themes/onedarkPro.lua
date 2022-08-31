@@ -19,7 +19,7 @@ function M.setup()
         cursorline = "#61afef",
       }, ]]
     }, -- Override default colors by specifying colors for 'onelight' or 'onedark' themes
-    heightlights = {
+    highlights = {
       PmenuSel = { bg = "#282C34", fg = "NONE" },
       Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
 
@@ -96,7 +96,7 @@ function M.setup()
         fg = "#61afef",
       }, ]]
     },
-    ft_heightlights = {}, -- Override default highlight groups for specific filetypes
+    ft_highlights = {}, -- Override default highlight groups for specific filetypes
     plugins = { -- Override which plugins highlight groups are loaded
       all = true,
       native_lsp = true,
