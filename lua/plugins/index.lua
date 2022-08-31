@@ -113,7 +113,7 @@ return packer.startup(function(use)
     use { "lewis6991/gitsigns.nvim", config = function() require("plugins._git").gitsignsSetup() end }
     use { "sindrets/diffview.nvim", config = function() require("plugins._git").diffviewSetup() end }
     use { "TimUntersberger/neogit", requires = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" }, config = function() require("plugins._git").neogitSetup() end }
-    use {'pwntester/octo.nvim', requires = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim', 'kyazdani42/nvim-web-devicons', }, config = function () require"_octo".setup() end } -- Edit and review GitHub issues and pull requests from the comfort of your favorite editor.
+    use {'pwntester/octo.nvim', requires = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim', 'kyazdani42/nvim-web-devicons', }, config = function () require"plugins._octo".setup() end } -- Edit and review GitHub issues and pull requests from the comfort of your favorite editor.
 
     -- Note taking
     use { "nvim-neorg/neorg", ft = "norg", after = "nvim-treesitter", config = function() require("plugins._norg").setup() end }
