@@ -120,6 +120,7 @@ M.setup = function()
             H = { "<cmd>:lua signature_help()<cr>", "Signature help" },
             s = { "<cmd>:Telescope lsp_document_symbols<cr>", "Document symbols" },
             S = { "<cmd>:Telescope lsp_workspace_symbols<cr>", "Workspace symbols" },
+            r = { "<cmd>:Telescope lsp_references<cr>", "References" },
             D = { "<cmd>:lua declaration({ border = 'rounded', max_width = 80 })<cr>", "Declaration" },
             A = { "<cmd>:lua range_code_action()<cr>", "Range code action" },
             c = { "<cmd>:lua incoming_calls()<cr>", "Incoming calls" },

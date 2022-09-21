@@ -51,7 +51,8 @@ return packer.startup(function(use)
     use { "rmagatti/auto-session", config = function() require("plugins._sessions").setup() end } -- sessions manager
     use { "rmagatti/session-lens",  requires = { "rmagatti/auto-session", "nvim-telescope/telescope.nvim" }, config = function() require("session-lens").setup() end } -- telescope sessions manager 
     use { "akinsho/toggleterm.nvim", config = function () require("plugins._toggleterm").setup() end } -- To persist and toggle multiple terminals 
-     use { "christianchiarulli/nvim-gps", branch = "text_hl", config = function() require("plugins._gps").setup() end } -- nvim-gps is status line component that shows context of the current cursor position in file
+    use { "christianchiarulli/nvim-gps", branch = "text_hl", config = function() require("plugins._gps").setup() end } -- nvim-gps is status line component that shows context of the current cursor position in file
+    use {'jbyuki/instant.nvim', config = function() require("plugins._instant").setup() end } -- instant.nvim is a collaborative editing plugin for Neovim written in Lua with no dependencies.
 
 
     -- LSP
@@ -64,7 +65,7 @@ return packer.startup(function(use)
     -- Treesitter
     -- parser generator language syntax
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = function() require("plugins._treesitter").setup() end }
-    -- use { "p00f/nvim-ts-rainbow" } -- NOTE: To be fixed
+    use { "p00f/nvim-ts-rainbow" } -- NOTE: To be fixed
     use { "lukas-reineke/indent-blankline.nvim", config = function() require("plugins._indentline").setup() end }
     use { "numToStr/Comment.nvim", config = function() require("plugins._comment").setup() end }
     use "JoosepAlviste/nvim-ts-context-commentstring"
