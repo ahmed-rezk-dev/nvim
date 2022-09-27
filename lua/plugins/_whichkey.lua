@@ -154,13 +154,17 @@ M.setup = function()
             l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
             p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
             r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-            R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+            --[[ R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" }, ]]
             s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
             u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
             o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
             b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
             c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
             C = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)" },
+            L = { "<cmd>Octo pr list<cr>", "PR list" },
+            R = { "<cmd>Octo review start<cr>", "review start" },
+            S = { "<cmd>Octo review submit<cr>", "review submit" },
+            D = { "<cmd>Octo review discord<cr>", "review discord" },
       },
 
       -- Debugging

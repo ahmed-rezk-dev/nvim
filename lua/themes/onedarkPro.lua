@@ -99,9 +99,9 @@ function M.setup()
     ft_highlights = {}, -- Override default highlight groups for specific filetypes
     plugins = { -- Override which plugins highlight groups are loaded
       all = true,
-      native_lsp = true,
+      --[[ native_lsp = true,
       polygot = true,
-      treesitter = true,
+      treesitter = true, ]]
     },
     styles = {
       comments = "italic",
@@ -117,7 +117,7 @@ function M.setup()
       undercurl = true, -- Use the themes opinionated undercurl styles?
       cursorline = true, -- Use cursorline highlighting?
       transparency = false, -- Use a transparent background?
-      terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
+      terminal_colors = false, -- Use the theme's colors for Neovim's :terminal?
       window_unfocused_color = true, -- When the window is out of focus, change the normal background?
     },
   }
