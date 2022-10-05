@@ -69,7 +69,7 @@ M.setup = function()
         ["q"] = { "<cmd>q!<CR>", "Quit" },
         ["a"] = { "<cmd>qa<CR>", "Quit All" },
         ["A"] = { "<cmd>qa!<CR>", "Quit All & Cancel" },
-        ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", "Comment" },
+        ["/"] = { "<cmd>lua require('Comment.api').toggle_current_linewise_op()<CR>", "Comment" },
         ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
         ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
         ["h"] = { '<cmd>let @/=""<CR>', "No Highlight" },
@@ -104,6 +104,14 @@ M.setup = function()
             m = { "<cmd>Telescope marks<cr>", "Bookmarks" },
             p = { "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>", "Colorscheme with Preview" },
             T = { "<cmd>TodoTelescope <cr>", "TODO" },
+        },
+
+        -- Seacrh & Replace
+        r = {
+            name = "Search & Replace",
+            s = { "<cmd>lua require('spectre').open_visual()<cr>", "Search panel" },
+            w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search current word" },
+            f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Search current file" },
         },
 
         -- Sessions

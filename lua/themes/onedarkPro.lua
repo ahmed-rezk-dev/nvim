@@ -96,7 +96,6 @@ function M.setup()
         fg = "#61afef",
       }, ]]
     },
-    ft_highlights = {}, -- Override default highlight groups for specific filetypes
     plugins = { -- Override which plugins highlight groups are loaded
       all = true,
       --[[ native_lsp = true,
