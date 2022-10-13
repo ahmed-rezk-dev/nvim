@@ -98,17 +98,14 @@ function M.setup()
     },
     plugins = { -- Override which plugins highlight groups are loaded
       all = true,
-      --[[ native_lsp = true,
-      polygot = true,
-      treesitter = true, ]]
     },
+
     styles = {
       comments = "italic",
       keywords = "bold", -- change style of keywords to be bold
       functions = "italic,bold", -- styles can be a comma separated list
-      strings = "none",
-      variables = "none",
     },
+
     options = {
       bold = true, -- Use the themes opinionated bold styles?
       italic = true, -- Use the themes opinionated italic styles?
