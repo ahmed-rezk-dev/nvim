@@ -14,6 +14,7 @@ M.filename = function()
   local extension = ""
   local file_icon = ""
   local file_icon_color = ""
+  local foulder_icon = ""
   local default_file_icon = ""
   local default_file_icon_color = ""
 
@@ -37,7 +38,7 @@ M.filename = function()
       file_icon_color = default_file_icon_color
     end
 
-    return " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LineNr#" .. filename .. "%*"
+    return " " .. foulder_icon .. " " .. vim.fn.fnamemodify(vim.fn.expand('%:.'), ':h') .. " " .. "%#" .. hl_group .. "#" .. file_icon .. "%*" .. " " .. "%#LineNr#" .. filename .. "%*"
   end
 end
 
@@ -59,7 +60,7 @@ M.gps = function()
     return ""
   else
     if not isempty(gps_location) then
-      return retval .. " " .. icons.ui.ChevronRight .. " " .. gps_location
+      return  retval .. " " .. icons.ui.ChevronRight .. " " .. gps_location
     else
       return retval
     end
