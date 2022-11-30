@@ -152,6 +152,7 @@ cmp.setup {
     { name = "emoji" },
     { name = "vsnip" },
     { name = "nvim_lsp_signature_help" },
+    { name = "git" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
@@ -163,6 +164,8 @@ cmp.setup {
     native_menu = false,
   },
 }
+
+    require("cmp_git").setup()
 end
 
 return M

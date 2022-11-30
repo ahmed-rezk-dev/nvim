@@ -14,14 +14,11 @@ function M.setup()
       onelight = {
         bg = "#f5f5f5", -- green
       },
-      --[[ onedark = {
-        color_column = "#61afef",
-        cursorline = "#61afef",
-      }, ]]
     }, -- Override default colors by specifying colors for 'onelight' or 'onedark' themes
     highlights = {
       PmenuSel = { bg = "#282C34", fg = "NONE" },
       Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
+      --[[ IncSearch = { fg = "#EED8DA", cterm = "${red}" }, ]]
 
       -- Start of cmp highlights
       CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE", fmt = "strikethrough" },
@@ -78,7 +75,6 @@ function M.setup()
 
       VertSplit = {
         fg = "${purple}",
-        -- bg = "${red}",
       },
       TSProperty = {
         fg = (vim.o.background == "dark" and "${white}" or "${black}"),

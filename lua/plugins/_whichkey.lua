@@ -134,7 +134,7 @@ M.setup = function()
             c = { "<cmd>:lua incoming_calls()<cr>", "Incoming calls" },
             C = { "<cmd>:lua outgoing_calls(<cr>", "Outgoing calls" },
             t = { "<cmd>:lua type_definition()<cr>", "Type definition" },
-            b = { "<cmd>:TroubleToggle workspace_diagnostics<cr>", "All diagnostics" },
+            q = { "<cmd>:TroubleToggle quickfix<cr>", "All diagnostics" },
             w = { "<cmd>:lua add_workspace_folder()<cr>", "Add workspace folder" },
             R = { "<cmd>:lua remove_workspace_folder()<cr>", "Remove workspace folder" },
             W = { "<cmd>:lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<cr>", "List workspace folders" },
@@ -142,7 +142,7 @@ M.setup = function()
             i = { "<cmd>LspInfo<cr>", "Info" },
             j = { "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = O.lsp.popup_border}})<cr>", "Next Diagnostic" },
             k = { "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = O.lsp.popup_border}})<cr>", "Prev Diagnostic" },
-            q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
+            b = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
         },
 
         T = {
@@ -197,9 +197,14 @@ M.setup = function()
             J = { "<cmd>:'<,'>SnipRun<cr>", "Javascript Run" },
       },
 
+    -- Terminal support
+      t = {
+            name = "Terminal",
+            e = { "<cmd>lua _TYPESCHECK_TOGGLE()<cr>", "Typecheck" },
+      },
 
       -- notes comments
-      t = {
+      N = {
             name = "Notes",
             a = { "<cmd>:TodoTrouble<cr>", "Notes" },
       },

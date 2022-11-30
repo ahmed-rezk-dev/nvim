@@ -79,7 +79,7 @@ M.setup = function()
     false
   )[1] ]]
         local file_to_open = function()
-            vim.cmd [[e ~/Work/principlestudios/simplified-quoting-experience/notes.norg]]
+            vim.cmd [[e ~/Work/simplified-quoting/notes.norg]]
         end
         vim.api.nvim_win_call(win, file_to_open)
     end
@@ -129,6 +129,13 @@ M.setup = function()
 
     function _PYTHON_TOGGLE()
         python:toggle()
+    end
+
+
+    local typecheck = Terminal:new { cmd = "npm run typecheck", hidden = true }
+
+    function _TYPESCHECK_TOGGLE()
+        typecheck:toggle()
     end
 end
 

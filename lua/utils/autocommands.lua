@@ -73,3 +73,10 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "BufWinEnter", "BufFilePost" }, {
     vim.opt_local.winbar = value
   end,
 })
+
+vim.cmd [[
+  augroup typeCh
+    autocmd!
+    autocmd BufWritePost *.tsx  lua require("utils.tasks").runTypeCheckTasks() 
+  augroup end
+]]
