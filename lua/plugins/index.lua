@@ -62,6 +62,14 @@ return packer.startup(function(use)
     use "jose-elias-alvarez/null-ls.nvim"
     use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", config = function() require("plugins._trouble").setup() end }
 
+    --[[ use {"neomake/neomake", config = function()  vim.g.gneomake_typescriptreact_enabled_makers = "['tsc']" end} ]]
+    use {'rcarriga/nvim-notify'}
+    use { 'stevearc/overseer.nvim', requires = {"rcarriga/nvim-notify"},
+        config = function() require('overseer').setup()
+    end }
+
+    use 'MunifTanjim/nui.nvim'
+
     -- Treesitter
     -- parser generator language syntax
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = function() require("plugins._treesitter").setup() end }
@@ -83,6 +91,7 @@ return packer.startup(function(use)
     use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
     use { "onsails/lspkind.nvim" }
     use { "hrsh7th/cmp-nvim-lsp-signature-help" }
+    use { "petertriho/cmp-git", config = function() require("plugins._git").cmpGitSetup() end }
 
     -- snippets
     use { "L3MON4D3/LuaSnip" }
