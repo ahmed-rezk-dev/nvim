@@ -119,6 +119,7 @@ return packer.startup(function(use)
     use { "windwp/nvim-spectre",  config = function() require("plugins._spectre").setup() end } -- Hop is an EasyMotion-like plugin allowing you to jump anywhere in a document.
     -- Themes/Colorsches
     use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
+    use {'stevearc/dressing.nvim', config = function() require("plugins._dressing").setup() end } -- extensible core UI hooks (vim.ui.select and vim.ui.input).
 
     -- Git
     use { "lewis6991/gitsigns.nvim", config = function() require("plugins._git").gitsignsSetup() end }
