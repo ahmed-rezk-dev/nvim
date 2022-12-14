@@ -123,15 +123,77 @@ nnoremap gpr <cmd>lua require('goto-preview').goto_preview_references()<CR> ]]
   )
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format()' ]]
 end
 
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then
     client.server_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
+    --[[ client.server_capabilities.workspaceDiagnostics = true ]]
+    --[[ client.server_capabilities.enableProjectDiagnostics = true ]]
   end
+
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
+end
+
+local fn = vim.fn
+
+local function find_executable(binaryName)
+  local executable = fn.getcwd() .. "/node_modules/.bin/" .. binaryName
+  if 0 == fn.executable(executable) then
+    local sub_cmd =  fn.system("git rev-parse --show-toplevel")
+    local project_root_path = sub_cmd:gsub("\n","")
+    executable = project_root_path .. "/node_modules/.bin/" .. binaryName
+  end
+
+  if 0 == fn.executable(executable) then
+    executable = binaryName
+  end
+  return executable
+end
+
+function M.linter_d()
+  local winview = fn.winsaveview()
+  local path = fn.fnameescape(fn.expand("%:p"))
+  local executable_path = find_executable("eslint_d")
+  local stdout = vim.loop.new_pipe(false)
+  local stderr = vim.loop.new_pipe(false)
+  local linterResults = {}
+  local function readlint(err, data)
+
+    if data then
+      table.insert(linterResults, data)
+      local vals = vim.split(data, "\n")
+      for _, line in pairs(vals) do
+        if line and line ~= '' then
+          linterResults[#linterResults + 1] = line
+        end
+      end
+    end
+  end
+
+
+  handle = vim.loop.spawn(executable_path, {
+    args = {path, "-f", "compact"},
+    stdio = {stdout,stderr}
+  },
+  vim.schedule_wrap(function()
+    stdout:read_stop()
+    stderr:read_stop()
+    stdout:close()
+    stderr:close()
+    handle:close()
+    vim.api.nvim_command[["checktime"]]
+    fn.winrestview(winview)
+    fn.setqflist({}, ' ', {title = "eslint -- errors", lines = linterResults, efm = "%f: line %l\\, col %c\\, %m,%-G%.%#"})
+    nvim.command[[cwindow]]
+  end
+  )
+  )
+  vim.loop.read_start(stdout, readlint)
+  vim.loop.read_start(stderr, readlint)
 end
 
 return M

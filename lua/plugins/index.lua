@@ -63,10 +63,12 @@ return packer.startup(function(use)
     use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", config = function() require("plugins._trouble").setup() end }
 
     --[[ use {"neomake/neomake", config = function()  vim.g.gneomake_typescriptreact_enabled_makers = "['tsc']" end} ]]
-    use {'rcarriga/nvim-notify'}
+    use {'rcarriga/nvim-notify', config = function () require("plugins._notify").setup() end }
     use { 'stevearc/overseer.nvim', requires = {"rcarriga/nvim-notify"},
         config = function() require('overseer').setup()
     end }
+
+    use { "ray-x/lsp_signature.nvim", config = function() require("plugins._signature").setup() end }
 
     use 'MunifTanjim/nui.nvim'
 

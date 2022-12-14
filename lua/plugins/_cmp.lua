@@ -40,32 +40,32 @@ cmp.setup.cmdline(":", {
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
-  Text = "",
-  Method = "()",
-  Function = "",
-  Constructor = "",
-  -- Field = "",
-  Field = "",
-  Variable = "",
-  Class = "",
-  Interface = "",
-  Module = "",
-  Property = "",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
+    Text = "",
+    Method = "()",
+    Function = "",
+    Constructor = "",
+    -- Field = "",
+    Field = "",
+    Variable = "",
+    Class = "",
+    Interface = "",
+    Module = "",
+    Property = "",
+    Unit = "",
+    Value = "",
+    Enum = "",
+    Keyword = "",
+    Snippet = "",
+    Color = "",
+    File = "",
+    Reference = "",
+    Folder = "",
+    EnumMember = "",
+    Constant = "",
+    Struct = "",
+    Event = "",
+    Operator = "",
+    TypeParameter = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -76,7 +76,6 @@ cmp.setup {
     end,
   },
   mapping = {
-
     ["<Up>"] = cmp.mapping.select_prev_item(),
     ["<Down>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
@@ -138,11 +137,12 @@ cmp.setup {
       return kind
     end,
   },
+
   sources = {
-    { name = "luasnip" },
-    { name = "cmp_tabnine" },
     { name = "nvim_lsp" },
     { name = "treesitter" },
+    { name = "cmp_tabnine" },
+    { name = "luasnip" },
     { name = "path" },
     { name = "spell" },
     { name = "buffer" },
@@ -154,6 +154,7 @@ cmp.setup {
     { name = "nvim_lsp_signature_help" },
     { name = "git" },
   },
+
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
@@ -165,7 +166,6 @@ cmp.setup {
   },
 }
 
-    require("cmp_git").setup()
 end
 
 return M

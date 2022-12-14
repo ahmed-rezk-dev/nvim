@@ -1,0 +1,7 @@
+locationInformationObject
+displayedAddress
+manualAddressEntryAllowed
+isAutoAddressEntryFormValid
+isManualAddressEntryValid
+verifiedLatLngValues
+pushNotification
