@@ -61,7 +61,8 @@ return packer.startup(function(use)
     use "tamago324/nlsp-settings.nvim"
     use "jose-elias-alvarez/null-ls.nvim"
     use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", config = function() require("plugins._trouble").setup() end }
-    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async', config = function() require('plugins._fold').setup() end }
+    --[[ use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async', config = function() require('plugins._fold').setup() end } ]]
+    use{ 'anuvyklack/pretty-fold.nvim', config = function() require('pretty-fold').setup() end }
 
     --[[ use {"neomake/neomake", config = function()  vim.g.gneomake_typescriptreact_enabled_makers = "['tsc']" end} ]]
     use {'rcarriga/nvim-notify', config = function () require("plugins._notify").setup() end }

@@ -50,5 +50,5 @@ null_ls.setup {
         --[[ actions.cspell, ]]
         --[[ diagnostics.cspell ]]
   },
-  --[[ on_attach = on_attach ]]
+  on_attach = on_attach
 }
