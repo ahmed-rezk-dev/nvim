@@ -4,7 +4,7 @@ if vim.fn.exists "syntax_on" then
 end
 --[[ vim.o.background = "dark" ]]
 vim.o.termguicolors = true
---[[ vim.g.colors_name = "custom" ]]
+vim.g.colors_name = "custom"
 
 local util = require "themes.custom.util"
 Config = require "themes.custom.config"
@@ -15,6 +15,7 @@ local markdown = require "themes.custom.markdown"
 local Whichkey = require "themes.custom.Whichkey"
 local Git = require "themes.custom.Git"
 local LSP = require "themes.custom.LSP"
+local CMP = require "themes.custom.nvim_cmp"
 
 local skeletons = {
   highlights,
@@ -23,6 +24,7 @@ local skeletons = {
   Whichkey,
   Git,
   LSP,
+  CMP
 }
 
 for _, skeleton in ipairs(skeletons) do

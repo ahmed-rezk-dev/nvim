@@ -61,6 +61,7 @@ return packer.startup(function(use)
     use "tamago324/nlsp-settings.nvim"
     use "jose-elias-alvarez/null-ls.nvim"
     use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", config = function() require("plugins._trouble").setup() end }
+    use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async', config = function() require('plugins._fold').setup() end }
 
     --[[ use {"neomake/neomake", config = function()  vim.g.gneomake_typescriptreact_enabled_makers = "['tsc']" end} ]]
     use {'rcarriga/nvim-notify', config = function () require("plugins._notify").setup() end }
@@ -120,7 +121,9 @@ return packer.startup(function(use)
     use { "phaazon/hop.nvim", as = "hop", config = function() require("plugins._hop").setup() end } -- Hop is an EasyMotion-like plugin allowing you to jump anywhere in a document.
     use { "windwp/nvim-spectre",  config = function() require("plugins._spectre").setup() end } -- Hop is an EasyMotion-like plugin allowing you to jump anywhere in a document.
     -- Themes/Colorsches
-    use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
+    use "siduck76/nvim-base16.lua"
+    --[[ use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end } ]]
+    use { "ahmed-rezk-dev/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
     use {'stevearc/dressing.nvim', config = function() require("plugins._dressing").setup() end } -- extensible core UI hooks (vim.ui.select and vim.ui.input).
 
     -- Git
