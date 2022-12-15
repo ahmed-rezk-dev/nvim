@@ -9,7 +9,7 @@ local ondDarkPro = require("onedarkpro")
       },
     }, -- Override default colors by specifying colors for 'onelight' or 'onedark' themes
     plugins = { -- Override which plugins highlight groups are loaded
-        all = true,
+        all = false,
         telescope = true
     },
 
@@ -75,20 +75,22 @@ local ondDarkPro = require("onedarkpro")
         CmpItemKindTypeParameter = { fg = "#D8EEEB", bg = "#58B5A8" },
         -- End of cmp highlights
 
+        -- Fold groups
+        Folded = { bg = "#30363d", fg = "" }, -- line used for closed folds
+        FoldedNC = { bg = "#58B5A8", fg = "#D4A959" }, -- Folded for inactive windows
+        FoldColumn = { bg = "", fg = "#D4A959" },  -- 'foldcolumn on the line numbers' 
+
         FloatBorder = { fg = "#61afef" },
-
         TelescopeBorder = { fg = "#61afef"},
-
         TelescopePromptBorder = { fg = "#61afef" },
-
         TelescopePreviewBorder = { fg = "#61afef" },
-
         VertSplit = { fg = "${purple}" },
-
         TSProperty = { fg = (vim.o.background == "dark" and "${white}" or "${black}") },
-
         TSTagAttribute = { fg = "${purple}" },
         LspDiagnosticsDefaultWarning = { fg = "${white}", bg = "${yellow}" },
+
+        --[[ UfoFoldedBg = {bg= "#58B5A8"}, ]]
+        --[[ UfoFoldedFg = {fg= "#58B5A8"} ]]
         --[[ CmpDocumentation = {
             bg = "#61afef",
             fg = "#61afef",
