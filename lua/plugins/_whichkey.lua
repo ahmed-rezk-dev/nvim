@@ -80,11 +80,11 @@ M.setup = function()
         -- Packer
         p = {
             name = "Packer",
-            c = { "<cmd>PackerCompile<cr>", "Compile" },
-            i = { "<cmd>PackerInstall<cr>", "Install" },
-            r = { "<cmd>lua require('lv-utils').reload_lv_config()<cr>", "Reload" },
-            s = { "<cmd>PackerSync<cr>", "Sync" },
-            u = { "<cmd>PackerUpdate<cr>", "Update" },
+            l = { "<cmd>Lazy update<cr>", "Log" },
+            u = { "<cmd>Lazy update<cr>", "Update" },
+            i = { "<cmd>Lazy install<cr>", "Install" },
+            s = { "<cmd>Lazy sync<cr>", "Sync" },
+            c = { "<cmd>Lazy clear<cr>", "Clear" },
         },
 
         -- Seacrh
