@@ -2,7 +2,7 @@ local options = {
     backup = false, -- creates a backup file
     clipboard = "unnamedplus", -- allows neovim to access the system clipboard
     --[[ cmdheight = 0, -- more space in the neovim command line for displaying messages ]]
-    cmdheight = 1, -- more space in the neovim command line for displaying messages
+    cmdheight = 0, -- more space in the neovim command line for displaying messages
     completeopt = { "menuone", "noselect" }, -- mostly just for cmp
     conceallevel = 0, -- so that `` is visible in markdown files
     fileencoding = "utf-8", -- the encoding written to a file
@@ -36,9 +36,12 @@ local options = {
     --[[ guifont = "Fira Code:h12", -- the font used in graphical neovim applications ]]
     spelllang = "en_us",
     -- FOLD
+    --[[ foldcolumn = '1', ]]
     foldmethod = "indent", -- folding, set to "expr" for treesitter based foloding
     foldopen = "mark",
-    foldlevel = 1,
+    foldlevel = 2,
+    foldlevelstart = 2,
+    foldenable = true,
     hidden = true,
     laststatus = 3,
 }

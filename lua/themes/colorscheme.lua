@@ -6,8 +6,8 @@
 --[[ vim.go.background = O.background ]]
 
 
---[[ require('themes.custom') ]]
+require('themes.custom')
 --vim.cmd [[set background=dark]]
---[[ vim.cmd("colorscheme onedark") ]]
+vim.cmd("colorscheme onedark")
 --[[ vim.cmd("colorscheme onelight") ]]
 --[[ vim.cmd("colorscheme onedark_dark") ]]

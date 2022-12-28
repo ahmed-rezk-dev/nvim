@@ -62,7 +62,7 @@ return packer.startup(function(use)
     use "jose-elias-alvarez/null-ls.nvim"
     use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", config = function() require("plugins._trouble").setup() end }
     --[[ use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async', config = function() require('plugins._fold').setup() end } ]]
-    use{ 'anuvyklack/pretty-fold.nvim', config = function() require('pretty-fold').setup() end }
+    --[[ use{ 'anuvyklack/pretty-fold.nvim', config = function() require('pretty-fold').setup() end } ]]
 
     --[[ use {"neomake/neomake", config = function()  vim.g.gneomake_typescriptreact_enabled_makers = "['tsc']" end} ]]
     use {'rcarriga/nvim-notify', config = function () require("plugins._notify").setup() end }
@@ -95,7 +95,6 @@ return packer.startup(function(use)
     use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
     use { "onsails/lspkind.nvim" }
     use { "hrsh7th/cmp-nvim-lsp-signature-help" }
-    use { "petertriho/cmp-git", config = function() require("plugins._git").cmpGitSetup() end }
 
     -- snippets
     use { "L3MON4D3/LuaSnip" }
@@ -123,18 +122,31 @@ return packer.startup(function(use)
     use { "windwp/nvim-spectre",  config = function() require("plugins._spectre").setup() end } -- Hop is an EasyMotion-like plugin allowing you to jump anywhere in a document.
     -- Themes/Colorsches
     use "siduck76/nvim-base16.lua"
-    --[[ use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end } ]]
-    use { "ahmed-rezk-dev/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
-    use {'stevearc/dressing.nvim', config = function() require("plugins._dressing").setup() end } -- extensible core UI hooks (vim.ui.select and vim.ui.input).
+    use { "olimorris/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end }
+    --[[ use { "ahmed-rezk-dev/onedarkpro.nvim", config = function() require("themes.onedarkPro").setup() end } ]]
+    --[[ use {'stevearc/dressing.nvim', config = function() require("plugins._dressing").setup() end } -- extensible core UI hooks (vim.ui.select and vim.ui.input). ]]
+    -- My fave colour schemes:
+    -- dracula/dracula-theme, rakr/vim-one, gosukiwi/vim-atom-dark,
+    -- phanviet/vim-monokai-pro rhysd/vim-color-spring-night arzg/vim-colors-xcode
+    -- kyoz/purify 'jonathanfilip/vim-lucius'
+    --[[ use {'catppuccin/nvim'} ]]
+    --[[ use {'Mofiqul/dracula.nvim'} ]]
+    --[[ use {'shaunsingh/nord.nvim'} ]]
+    --[[ use 'navarasu/onedark.nvim' ]]
 
     -- Git
     use { "lewis6991/gitsigns.nvim", config = function() require("plugins._git").gitsignsSetup() end }
     use { "sindrets/diffview.nvim", config = function() require("plugins._git").diffviewSetup() end }
     use { "TimUntersberger/neogit", requires = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim" }, config = function() require("plugins._git").neogitSetup() end }
-    use {'pwntester/octo.nvim', requires = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim', 'kyazdani42/nvim-web-devicons', }, config = function () require"plugins._octo".setup() end } -- Edit and review GitHub issues and pull requests from the comfort of your favorite editor.
-
+    use {
+        'pwntester/octo.nvim',
+        requires = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim', 'kyazdani42/nvim-web-devicons', },
+        config = function () require"plugins._octo".setup() end
+    } -- Edit and review GitHub issues and pull requests from the comfort of your favorite editor.
     -- Note taking
     use { "nvim-neorg/neorg", ft = "norg", after = "nvim-treesitter", config = function() require("plugins._norg").setup() end }
+    use { "petertriho/cmp-git", config = function() require("plugins._git").cmpGitSetup() end }
+    --[[ use {'akinsho/git-conflict.nvim', tag = "*", config = function() require('plugins._git').gitConflicts() end } -- visualise and resolve conflicts ]]
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

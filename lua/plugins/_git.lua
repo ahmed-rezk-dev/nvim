@@ -88,9 +88,34 @@ M.diffviewSetup = function()
             fold_closed = "",
             fold_open = "",
         },
+        view = {
+            -- Configure the layout and behavior of different types of views.
+            -- Available layouts: 
+            --  'diff1_plain'
+            --    |'diff2_horizontal'
+            --    |'diff2_vertical'
+            --    |'diff3_horizontal'
+            --    |'diff3_vertical'
+            --    |'diff3_mixed'
+            --    |'diff4_mixed'
+            -- For more info, see ':h diffview-config-view.x.layout'.
+            default = {
+              -- Config for changed files, and staged files in diff views.
+              layout = "diff2_horizontal",
+            },
+            merge_tool = {
+              -- Config for conflicted files in diff views during a merge or rebase.
+              layout = "diff3_horizontal",
+              disable_diagnostics = true,   -- Temporarily disable diagnostics for conflict buffers while in the view.
+            },
+            file_history = {
+              -- Config for changed files in file history views.
+              layout = "diff2_horizontal",
+            },
+          },
         file_panel = {
             win_config = {
-                position = "bottom", -- One of 'left', 'right', 'top', 'bottom'
+                position = "right", -- One of 'left', 'right', 'top', 'bottom'
                 width = 80, -- Only applies when position is 'left' or 'right'
                 height = 10, -- Only applies when position is 'top' or 'bottom'
             },
@@ -356,4 +381,28 @@ require("cmp_git").setup({
   }
 )
 end
+
+
+M.gitConflicts = function ()
+    require('git-conflict').setup({
+        default_mappings = true, -- disable buffer local mapping created by this plugin
+        default_commands = true, -- disable commands created by this plugin
+        disable_diagnostics = false, -- This will disable the diagnostics in a buffer whilst it is conflicted
+        highlights = { -- They must have background color, otherwise the default color will be used
+            incoming = 'DiffText',
+            current = 'DiffAdd',
+        }
+    })
+    vim.api.nvim_create_autocommand('User', {
+        pattern = 'GitConflictDetected',
+            callback = function()
+            vim.notify('Conflict detected in '..vim.fn.expand('<afile>'))
+            vim.keymap.set('n', 'cww', function()
+              --[[ engage.conflict_buster() ]]
+              --[[ create_buffer_local_mappings() ]]
+            end)
+        end
+    })
+end
+
 return M

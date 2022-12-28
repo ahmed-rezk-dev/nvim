@@ -10,7 +10,7 @@ local ondDarkPro = require("onedarkpro")
     }, -- Override default colors by specifying colors for 'onelight' or 'onedark' themes
     plugins = { -- Override which plugins highlight groups are loaded
         all = false,
-        telescope = true
+        --[[ telescope = true ]]
     },
 
     styles = {
@@ -31,8 +31,10 @@ local ondDarkPro = require("onedarkpro")
     },
 
     highlights = {
+        -- Commend line groups
         PmenuSel = { bg = "#282C34", fg = "NONE" },
         Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
+        NormalFloat = { fg = "#C5CDD9", bg = "${bg}" },
         --[[ IncSearch = { fg = "#EED8DA", cterm = "${red}" }, ]]
 
         -- Start of cmp highlights
@@ -77,8 +79,8 @@ local ondDarkPro = require("onedarkpro")
 
         -- Fold groups
         Folded = { bg = "#30363d", fg = "" }, -- line used for closed folds
-        FoldedNC = { bg = "#58B5A8", fg = "#D4A959" }, -- Folded for inactive windows
-        FoldColumn = { bg = "", fg = "#D4A959" },  -- 'foldcolumn on the line numbers' 
+        FoldedNC = { bg = "#30363d", fg = "#D4A959" }, -- Folded for inactive windows
+        FoldColumn = { bg = "", fg = "#FFFFFF" },  -- 'foldcolumn on the line numbers' 
 
         FloatBorder = { fg = "#61afef" },
         TelescopeBorder = { fg = "#61afef"},
