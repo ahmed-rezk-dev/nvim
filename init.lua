@@ -1,6 +1,6 @@
 require "plugins._lazy"
-require "plugins.init"
 require "options"
+require "plugins.init"
 require "utils.mappings"
 require "utils.keymaps"
 require "utils.autocommands"
