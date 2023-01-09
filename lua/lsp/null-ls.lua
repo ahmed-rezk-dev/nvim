@@ -56,8 +56,7 @@ local on_attach = function(client, bufnr)
       group = augroup,
       buffer = bufnr,
       callback = function()
-        --[[ async_formatting(bufnr) ]]
-        lsp_formatting(bufnr)
+        async_formatting(bufnr)
       end,
     })
   end
@@ -66,20 +65,10 @@ end
 null_ls.setup {
   debug = true,
   sources = {
-    formatting.prettier,
+    formatting.prettierd,
     formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,
     diagnostics.eslint,
-    --[[ TODO: ]]
-    --[[ diagnostics.codespell, ]]
-    --[[ diagnostics.misspell, ]]
-    --[[ null_ls.builtins.completion.spell, ]]
-    --[[ actions.cspell, ]]
-    --[[ diagnostics.cspell ]]
   },
   on_attach = on_attach,
-  --[[ on_attach = function(client, bufnr) ]]
-  --[[   local lsp_format_modifications = require "lsp-format-modifications" ]]
-  --[[ lsp_format_modifications.attach(client, bufnr, { format_on_save = true }) ]]
-  --[[ end, ]]
 }
