@@ -1,4 +1,4 @@
-local overseer = require('overseer')
+local overseer = require "overseer"
 
 local M = {}
 
@@ -60,10 +60,11 @@ M.setup = function()
       lualine_a = {
         { "mode", separator = { left = "" }, right_padding = 2 },
       },
-      lualine_b = {
+      lualine_b = {},
+      lualine_x = {
         {
           "overseer",
-          label = '',     -- Prefix for task counts
+          label = "", -- Prefix for task counts
           colored = true, -- Color the task icons and counts
           symbols = {
             [overseer.STATUS.FAILURE] = "Errors 🤣: ",
@@ -71,12 +72,12 @@ M.setup = function()
             [overseer.STATUS.SUCCESS] = "No errors 🥳: ",
             [overseer.STATUS.RUNNING] = "Errors checking 👻: ",
           },
-          unique = true,     -- Unique-ify non-running task count by name
-          name = nil,         -- List of task names to search for
-          name_not = false,   -- When true, invert the name search
-          status = nil,       -- List of task statuses to display
+          unique = true, -- Unique-ify non-running task count by name
+          name = nil, -- List of task names to search for
+          name_not = false, -- When true, invert the name search
+          status = nil, -- List of task statuses to display
           status_not = false, -- When true, invert the status search
-        }
+        },
       },
       lualine_y = {},
       lualine_z = {
@@ -84,7 +85,7 @@ M.setup = function()
       },
       -- These will be filled later
       lualine_c = {},
-      lualine_x = {},
+      --[[ lualine_x = {}, ]]
     },
     inactive_sections = {
       -- these are to remove the defaults

@@ -44,9 +44,9 @@ local plugins = {
 
   -- LSP
   { "neovim/nvim-lspconfig" },
-  { "williamboman/nvim-lsp-installer" },
   { "tamago324/nlsp-settings.nvim" },
   { "jose-elias-alvarez/null-ls.nvim" },
+  { "joechrisellis/lsp-format-modifications.nvim" },
   {
     "folke/trouble.nvim",
     dependencies = "kyazdani42/nvim-web-devicons",
@@ -54,17 +54,19 @@ local plugins = {
       require("plugins._trouble").setup()
     end,
   },
+  { "williamboman/mason.nvim" },
+  { "williamboman/mason-lspconfig.nvim" },
   --[[   {'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async', config = function() require('plugins._fold').setup() end } ]]
   --[[  { 'anuvyklack/pretty-fold.nvim', config = function() require('pretty-fold').setup() end } ]]
 
   --[[   {"neomake/neomake", config = function()  vim.g.gneomake_typescriptreact_enabled_makers = "['tsc']" end} ]]
-  {
-    "rcarriga/nvim-notify",
-    config = function()
-      require("plugins._notify").setup()
-    end,
-    lazy = true,
-  },
+  --[[ { ]]
+  --[[   "rcarriga/nvim-notify", ]]
+  --[[   config = function() ]]
+  --[[     require("plugins._notify").setup() ]]
+  --[[   end, ]]
+  --[[   lazy = true, ]]
+  --[[ }, ]]
   {
     "stevearc/overseer.nvim",
     dependencies = { "rcarriga/nvim-notify" },
